@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ioart/CSC-PM-2019-Public.svg?branch=master)](https://travis-ci.org/ioart/CSC-PM-2019-Public)
+
 # CSC-PM-2019-Public
 Practical minimum - Homeworks  
 Author - Artem Ioselevskii

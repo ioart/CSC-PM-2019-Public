@@ -20,7 +20,7 @@ before_script:
 script:
   - pytest
 
-after_script:
+after_success:
   # DOCKER_USERNAME and DOCKER_PASSWORD stored in Travis CI Web interface
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker images

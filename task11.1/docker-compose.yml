@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  echo-server:
+    build: .
+    ports:
+    - "5000:4567"
+    volumes:
+    - /var/log:/log
+    depends_on:
+    - cache
+    - mongo
+
+  cache:
+    image: redis
+    ports:
+    - "7000:6379"
+
+  mongo:
+    image: mongo
+    container_name: my-mongo
+    ports:
+    - "27017:27017"

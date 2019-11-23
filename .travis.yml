@@ -20,10 +20,7 @@ before_script:
 script:
   - pytest
 
-before_deploy:
+after_script:
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-
-deploy:
-  provider: script
-  script: docker push "${IMAGE_NAME}:latest"
-
+  - docker tag "${IMAGE_NAME}" "$DOCKER_USERNAME"/http-server:latest
+  - docker push "$DOCKER_USERNAME"/http-server:latest

@@ -21,7 +21,7 @@ script:
   - pytest
 
 after_success:
-  # DOCKER_USERNAME and DOCKER_PASSWORD stored in Travis CI Web interface
+  # DOCKER_USERNAME and DOCKER_PASSWORD are stored in Travis CI Web interface
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker images
   - docker tag ${IMAGE_NAME} $DOCKER_USERNAME/http-server

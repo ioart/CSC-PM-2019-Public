@@ -87,7 +87,7 @@ def test_dict_message():
     sessions = [
         # method, key, message, --  status
         ['POST',   '9', {"f":25, "s":50}, 'Created'],
-        ['GET',    '9', None, {"f":25, "s":50}],
+        ['GET',    '9', None, {"f":25, "s":100500}],
         ['DELETE', '9', None, 'Ok'],
     ]
     send_request(sessions)

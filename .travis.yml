@@ -6,6 +6,10 @@ python:
 services:
   - docker
 
+env:
+  global:
+    - IMAGE_NAME=task111_echo-server
+
 install:
   - pip install -r requirements.txt
 
@@ -15,3 +19,11 @@ before_script:
 
 script:
   - pytest
+
+before_deploy:
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+
+deploy:
+  provider: script
+  script: docker push "${IMAGE_NAME}:latest"
+

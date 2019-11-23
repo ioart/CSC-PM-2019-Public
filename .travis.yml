@@ -21,6 +21,7 @@ script:
   - pytest
 
 after_script:
-  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-  - docker tag "${IMAGE_NAME}" "$DOCKER_USERNAME"/http-server:latest
-  - docker push "$DOCKER_USERNAME"/http-server:latest
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker images
+  - docker tag ${IMAGE_NAME} $DOCKER_USERNAME/http-server
+  - docker push $DOCKER_USERNAME/http-server

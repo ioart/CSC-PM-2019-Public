@@ -10,5 +10,4 @@ This is an extension of Task 9.2. We have a http-server that can store data in d
 ## TASK 11.2
 This is an extension of Task 11.1. Now Travis pushes an image to DockerHub after each successfully commit.
 
-
 Enjoy!
